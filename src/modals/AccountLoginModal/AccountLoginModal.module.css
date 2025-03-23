@@ -1,0 +1,32 @@
+.modal_type_account_authorization__frame {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 400;
+}
+
+.modal_type_account_authorization * {
+    height: min-content;
+    font-weight: inherit;
+}
+
+.welcome_message {
+    font-size: 20px;
+}
+
+.no_account_container {
+    font-size: 16px;
+    display: block;
+}
+
+.registration_span {
+    margin-left: 6px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.modal__button-submit {
+    block-size: 40px;
+    background-color: var(--modal-submit-button-color);
+}

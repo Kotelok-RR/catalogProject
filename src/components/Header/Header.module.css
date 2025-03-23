@@ -1,0 +1,15 @@
+.header {
+    inline-size: 100vw;
+    block-size: 88px;
+    padding: 0 max(40px, (100vw - 1920px) / 2);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header__button-account {
+    background: transparent url('@assets/icons/UserIcon.svg') center no-repeat;
+    block-size: 32px;
+    inline-size: 32px;
+}
+

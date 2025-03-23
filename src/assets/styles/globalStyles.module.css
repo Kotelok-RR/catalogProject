@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+input, textarea, select {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+html, body {
+    box-sizing: 100%;
+    block-size: 100%;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    line-height: 1.5;
+    
+}

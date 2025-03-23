@@ -1,0 +1,38 @@
+.pages-routing__container {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 48px;
+}
+
+.button-routing {
+    block-size: 52px;
+    inline-size: 160px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.button-routing::before {
+    content: '';
+    display: block;
+    position: relative;
+    block-size: 20px;
+    inline-size: 20px;
+}
+
+.button-routing_type-catalog::before {
+    background: url('@icons/catalogButtonIcon.svg') center / contain no-repeat;
+}
+
+.button-routing_type-brands::before {
+    background: url('@icons/brandsButtonIcon.svg') center / contain no-repeat;
+}
+
+.button-routing-is-active {
+    background-color: var(--active-button-color);
+}

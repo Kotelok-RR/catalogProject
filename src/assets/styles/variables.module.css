@@ -1,0 +1,11 @@
+:root {
+    --text-primary-color: #31363F;
+    --text-secondary-color: #EEEEEE;
+    --background-main-color: #fff;
+    --background-accent-color: #31363F;
+    --border-color: #31363F;
+    --modal-overlay-color: rgba(0, 0, 0, 0.9);
+    --modal-close-button-color: #EEEEEE;
+    --modal-submit-button-color: #EEEEEE;
+    --active-button-color: rgba(238,238,238, 0.75)
+}
