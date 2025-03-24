@@ -30,7 +30,7 @@ const openModal = (modalSelector) => {
         if (e.parentElement) {
             e.parentElement.classList.add(defaultModalStyles['modal_is-opened']);
             document.addEventListener('keydown', CloseModalWithEsc);
-            e.parentElement.addEventListener('mousedown', CloseModalOnOverlay)
+            e.parentElement.addEventListener('click', CloseModalOnOverlay)
         }
     });
 };

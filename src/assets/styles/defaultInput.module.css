@@ -1,23 +1,20 @@
 .input__placeholder {
     position: relative;
-    bottom: -36px;
+    bottom: 32px;
     transition: bottom 0.2s ease, font-size 0.2s ease;
-}
-
-.input__placeholder_downsized {
-    bottom: -12px;
-    font-size: 12px;
 }
 
 .form__input {
     inline-size: 100%;
-    block-size: 52px;
+    block-size: 48px;
     border-bottom: 1px solid var(--border-color);
     font-size: 20px;
     font-weight: 400;
 }
 
-.input__container:focus-within .input__placeholder {
-    bottom: -12px;
+.input__container:focus-within .input__placeholder,
+.form__input:not(:placeholder-shown) + .input__placeholder{
+    bottom: 60px;
     font-size: 12px;
 }
+

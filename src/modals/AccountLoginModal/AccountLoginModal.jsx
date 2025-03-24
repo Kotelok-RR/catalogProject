@@ -32,16 +32,17 @@ const AccountLoginModal = () => {
                     </h3>
                     <form className = {modalDefaultStyles.modal__form}>
                         <div className = {inputDefaultStyles.input__container}>
-                            <span className = {classNames(inputDefaultStyles.input__placeholder)}
-                            >
-                                Логин или почта</span>
                             <input 
                                 type = "text"
                                 name = "login"
                                 aria-label = "Введите логин или почту"
                                 required
                                 className = {inputDefaultStyles.form__input}
+                                placeholder = " "
                             />
+                            <label className = {classNames(inputDefaultStyles.input__placeholder)}>
+                                Логин или почта
+                            </label>
                         </div>
                         <Button 
                             buttonType = {'submit'}
