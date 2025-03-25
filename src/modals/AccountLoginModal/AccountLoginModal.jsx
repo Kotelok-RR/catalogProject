@@ -16,20 +16,25 @@ const AccountLoginModal = () => {
             <div className = {modalDefaultStyles.modal}>
                 <div className = {classNames(modalDefaultStyles.modal__frame, styles.modal_type_account_authorization__frame)}>
                     <Button
-                        buttonType = {['button']}
+                        buttonType = {'button'}
                         className = {modalDefaultStyles.modal__close}
                         onClick = {() => {
-                            closeModal(styles.modal_type_account_authorization__frame)
+                            closeModal()
                         }}
                         buttonContentnt = {''}
                     />
-                    <h3 className = {styles.welcome_message}>Добро пожаловать!</h3>
-                    <h3 className = {styles.no_account_container}>
-                        Нет аккаунта?
-                        <span className = {styles.registration_span}>
-                            Зарегестрироваться
-                        </span>
-                    </h3>
+                    <div className = {styles.title__container}>
+                        <h3 className = {styles.welcome_message}>Добро пожаловать!</h3>
+                        <h3 className = {styles.no_account_container}>
+                            Нет аккаунта?
+                            <Button
+                                buttonType = {'button'}
+                                className = {styles.registration_span}
+                                onClick = {() => {}}
+                                buttonContent = {'Зарегистрироваться'}
+                                />
+                        </h3>
+                    </div>
                     <form className = {modalDefaultStyles.modal__form}>
                         <div className = {inputDefaultStyles.input__container}>
                             <input 

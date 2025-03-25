@@ -1,13 +1,18 @@
 .modal_type_account_authorization__frame {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     font-weight: 400;
 }
 
 .modal_type_account_authorization * {
     height: min-content;
     font-weight: inherit;
+}
+
+.title__container {
+    display: grid;
+    gap: 16px;
 }
 
 .welcome_message {
@@ -20,13 +25,31 @@
 }
 
 .registration_span {
+    display: inline-block;
     margin-left: 6px;
     text-decoration: underline;
     text-underline-offset: 4px;
     cursor: pointer;
+    transition: transform 0.2s ease;
+    transform-origin: bottom left;
+    font-size: 16px;
+}
+
+.registration_span:hover,
+.registration_span:focus {
+    transform: scale(1.075);
+    transform-origin: bottom left;
 }
 
 .modal__button-submit {
+    position: relative;
     block-size: 40px;
     background-color: var(--modal-submit-button-color);
+    transition: background-color 0.2s ease;
+}
+
+.modal__button-submit:hover,
+.modal__button-submit:focus {
+    background-color: var(--modal-submit-button-focus-color);
+    color: var(--text-secondary-color);
 }

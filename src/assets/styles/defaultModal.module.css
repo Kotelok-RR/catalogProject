@@ -19,8 +19,6 @@
     transition: opacity s ease-in-out;
 }
 
-
-
 .modal__frame {
     position: relative;
     block-size: 305px;
@@ -41,7 +39,12 @@
     z-index: 100;
     block-size: 20px;
     inline-size: 20px;
+    transition: transform 0.2s ease;
+}
 
+.modal__close:hover,
+.modal__close:focus {
+    transform: scale(1.1);
 }
 
 .modal__form {
