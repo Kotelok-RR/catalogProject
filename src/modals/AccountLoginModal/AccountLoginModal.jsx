@@ -1,33 +1,31 @@
 import classNames from 'classnames';
 
 import Button from '@components/Button/Button.jsx';
-import closeModal from '@utils/CloseModal.jsx';
 
 import styles from './AccountLoginModal.module.css';
 import modalDefaultStyles from '@defaultStyles/defaultModal.module.css' ;
 import inputDefaultStyles from '@defaultStyles/defaultInput.module.css';
 
 
-const AccountLoginModal = () => {
-
+const AccountLoginModal = ({accountModalActive, setAccountModalActive}) => {
     return (
         
         <>
-            <div className = {modalDefaultStyles.modal}>
-                <div className = {classNames(modalDefaultStyles.modal__frame, styles.modal_type_account_authorization__frame)}>
+            <div className = { accountModalActive ? `${modalDefaultStyles.modal} ${modalDefaultStyles.is_opened}` : `${modalDefaultStyles.modal}`} onClick = {() => setAccountModalActive(false)}>
+                <div className = {classNames(modalDefaultStyles.modal__frame, styles.modal_type_account_authorization__frame)} onClick = {e => e.stopPropagation()}>
                     <Button
                         buttonType = {['button']}
                         className = {modalDefaultStyles.modal__close}
                         onClick = {() => {
-                            closeModal(styles.modal_type_account_authorization__frame)
+                            setAccountModalActive(false)
                         }}
-                        buttonContentnt = {''}
+                        buttonContent = {''}
                     />
                     <h3 className = {styles.welcome_message}>Добро пожаловать!</h3>
                     <h3 className = {styles.no_account_container}>
                         Нет аккаунта?
                         <span className = {styles.registration_span}>
-                            Зарегестрироваться
+                            Зарегистрироваться
                         </span>
                     </h3>
                     <form className = {modalDefaultStyles.modal__form}>

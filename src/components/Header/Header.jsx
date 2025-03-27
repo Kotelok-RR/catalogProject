@@ -1,18 +1,16 @@
 import Button from '@components/Button/Button.jsx'
 import openModal from '@utils/openModal.jsx'
-import PagesRoutingButtons from '../../features/pagesRoutingButtons/pagesRoutingButtons'
+import PagesRoutingButtons from '@features/pagesRoutingButtons/pagesRoutingButtons.jsx'
 
 import styles from './Header.module.css'
-import modalStyles from '@modals/AccountLoginModal/AccountLoginModal.module.css'
 
-const Header = () => {
-
+const Header = ({setAccountModalActive}) => {
     return (
         <>
             <header className = {styles["header"]}>
                 <Button
                     buttonType = 'button'
-                    onClick = {() => { openModal(modalStyles.modal_type_account_authorization__frame) }}
+                    onClick = {() => { setAccountModalActive(true) }}
                     className = {styles["header__button-account"]}
                     buttonContent = {''}
                 />
