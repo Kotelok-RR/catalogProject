@@ -13,23 +13,19 @@ const AccountLoginModal = ({accountModalActive, setAccountModalActive}) => {
     return (
         
         <>
-            <div className = {GetModalClassName(accountModalActive)} onClick = {() => setAccountModalActive(false)}>
+            <div className = {GetModalClassName(accountModalActive)} onClick = {() => setAccountModalActive(false)} tabIndex = "21">
                 <div className = {classNames(modalDefaultStyles.modal__frame, styles.modal_type_account_authorization__frame)} onClick = {e => e.stopPropagation()}>
-                    <Button
-                        buttonType = {['button']}
+                <Button
+                        buttonType = {'button'}
                         className = {modalDefaultStyles.modal__close}
                         onClick = {() => {
                             setAccountModalActive(false)
                         }}
-                        buttonContent = {''}
+                        buttonContentnt = {''}
                     />
-                    <h3 className = {styles.welcome_message}>Добро пожаловать!</h3>
-                    <h3 className = {styles.no_account_container}>
-                        Нет аккаунта?
-                        <span className = {styles.registration_span}>
-                            Зарегистрироваться
-                        </span>
-                    </h3>
+                    <div className = {styles.title__container}>
+                        <h3 className = {styles.welcome_message}>Вход в аккаунт</h3>
+                    </div>
                     <form className = {modalDefaultStyles.modal__form}>
                         <div className = {inputDefaultStyles.input__container}>
                             <input 
@@ -51,6 +47,14 @@ const AccountLoginModal = ({accountModalActive, setAccountModalActive}) => {
                             buttonContent = {'Войти'}
                         />
                     </form>
+                    <h3 className = {styles.no_account_container}>
+                            <Button
+                                buttonType = {'button'}
+                                className = {styles.registration_span}
+                                onClick = {() => {}}
+                                buttonContent = {'Зарегистрироваться'}
+                                />
+                        </h3>
                 </div>
             </div>
         </>

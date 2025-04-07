@@ -1,5 +1,4 @@
 import Button from '@components/Button/Button.jsx'
-import openModal from '@utils/openModal.jsx'
 import PagesRoutingButtons from '@features/pagesRoutingButtons/pagesRoutingButtons.jsx'
 
 import styles from './Header.module.css'
