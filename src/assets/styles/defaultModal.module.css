@@ -10,7 +10,7 @@
     transition: opacity 0.1s ease-in-out;
 }
 
-.modal.is_opened {
+.modal_is_opened {
     opacity: 1;
     visibility: visible;
     transition: opacity s ease-in-out;

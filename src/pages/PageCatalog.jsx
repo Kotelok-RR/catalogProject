@@ -1,13 +1,9 @@
-import Header from '@components/Header/Header.jsx'
-import Main from '@components/Main/Main.jsx'
-import { useState } from "react"
+import ProductsContainer from '@components/Containers/ProductContainer/ProductContainer.jsx'
 
 const PageCatalog = () => {
-    const [accountModalActive, setAccountModalActive] = useState(false)
     return (
         <>
-            <Header setAccountModalActive = {setAccountModalActive}/>
-            <Main accountModalActive = {accountModalActive} setAccountModalActive = {setAccountModalActive}/>
+            <ProductsContainer />
         </>
     )
 }

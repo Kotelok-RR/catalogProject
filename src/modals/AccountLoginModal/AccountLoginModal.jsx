@@ -2,6 +2,8 @@ import classNames from 'classnames';
 
 import Button from '@components/Button/Button.jsx';
 
+import GetModalClassName from '@utils/GetModalClassName.jsx'; 
+
 import styles from './AccountLoginModal.module.css';
 import modalDefaultStyles from '@defaultStyles/defaultModal.module.css' ;
 import inputDefaultStyles from '@defaultStyles/defaultInput.module.css';
@@ -11,7 +13,7 @@ const AccountLoginModal = ({accountModalActive, setAccountModalActive}) => {
     return (
         
         <>
-            <div className = { accountModalActive ? `${modalDefaultStyles.modal} ${modalDefaultStyles.is_opened}` : `${modalDefaultStyles.modal}`} onClick = {() => setAccountModalActive(false)}>
+            <div className = {GetModalClassName(accountModalActive)} onClick = {() => setAccountModalActive(false)}>
                 <div className = {classNames(modalDefaultStyles.modal__frame, styles.modal_type_account_authorization__frame)} onClick = {e => e.stopPropagation()}>
                     <Button
                         buttonType = {['button']}

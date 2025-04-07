@@ -1,20 +1,15 @@
 import { Routes, Route } from "react-router-dom"
-import AccountLoginModal from '@modals/AccountLoginModal/AccountLoginModal.jsx'
-import ProductsContainer from '@components/Containers/ProductContainer/ProductContainer.jsx'
-import BrandsContainer from '@components/Containers/BrandsContainer/BrandsContainer.jsx'
+import PageCatalog from '@pages/PageCatalog'
+import PageBrands from '@pages/PageBrands'
 
-const Main = ({accountModalActive, setAccountModalActive}) => {
+const Main = () => {
 
     return (
         <>
             <main>
-                <AccountLoginModal 
-                    accountModalActive = {accountModalActive}
-                    setAccountModalActive = {setAccountModalActive}
-                />
                 <Routes>
-                    <Route exact path = {'/'} element = {<ProductsContainer />}/>
-                    <Route path = {'/Brands'} element = {<BrandsContainer />}/>
+                    <Route exact path = {'/'} element = {<PageCatalog />}/>
+                    <Route path = {'/Brands'} element = {<PageBrands />}/>
                 </Routes>
             </main>
         </>
