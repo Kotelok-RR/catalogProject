@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 import PageCatalog from '@pages/PageCatalog'
 import PageBrands from '@pages/PageBrands'
 
@@ -8,7 +8,8 @@ const Main = () => {
         <>
             <main>
                 <Routes>
-                    <Route exact path = {'/'} element = {<PageCatalog />}/>
+                    <Route path="/" element={<Navigate to="/catalog" replace />} />
+                    <Route path = {'/catalog'} element = {<PageCatalog />}/>
                     <Route path = {'/Brands'} element = {<PageBrands />}/>
                 </Routes>
             </main>

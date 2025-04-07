@@ -4,27 +4,25 @@ import Button from '@components/Button/Button.jsx'
 
 import styles from './PagesRoutingButtons.module.css'
 
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const PagesRoutingButtons = () => {
+    const navigate = useNavigate();
+
     return (
         <div className = {styles['pages-routing__container']}>
-            <Link to = '/'>
                 <Button 
                     buttonType = {'button'}
                     className = {classNames(styles['button-routing'], styles['button-routing_type-catalog'], styles['button-routing-is-active'])}
-                    onClick = {() => {}}
+                    onClick={() => navigate('/catalog')}
                     buttonContent = {'Каталог'}
                 />
-            </Link>
-            <Link to = '/Brands'>
                 <Button 
                     buttonType = {'button'}
                     className = {classNames(styles['button-routing'], styles['button-routing_type-brands'])}
-                    onClick = {() => {}}
+                    onClick = {() => navigate('/brands')}
                     buttonContent = {'Бренды'}
                 />
-            </Link>
         </div>
     )
 }
