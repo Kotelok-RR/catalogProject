@@ -13,7 +13,7 @@ const AccountLoginModal = ({accountModalActive, setAccountModalActive}) => {
     return (
         
         <>
-            <div className = {GetModalClassName(accountModalActive)} onClick = {() => setAccountModalActive(false)} tabIndex = "21">
+            <div className = {GetModalClassName(accountModalActive)} onClick = {() => setAccountModalActive(false)}>
                 <div className = {classNames(modalDefaultStyles.modal__frame, styles.modal_type_account_authorization__frame)} onClick = {e => e.stopPropagation()}>
                 <Button
                         buttonType = {'button'}
