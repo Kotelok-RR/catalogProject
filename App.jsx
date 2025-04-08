@@ -13,7 +13,7 @@ function App() {
     <>
       <Header setAccountModalActive = {setAccountModalActive}/>
       <Main />
-      <Modals 
+      <Modals
         accountModalActive = {accountModalActive}
         setAccountModalActive = {setAccountModalActive}
       />

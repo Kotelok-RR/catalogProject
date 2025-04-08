@@ -1,7 +1,8 @@
-import axios from "axios"
 import { useState, useEffect } from "react"
-import Pagination from "@features/Pagination/Pagination.jsx"
 
+import { getCatalogProducts } from "@/utils/api"
+import Pagination from "@features/Pagination/Pagination.jsx"
+import Loader from "@/features/Loader/Loader"
 
 import styles from './ProductsContainer.module.css'
 
@@ -9,21 +10,33 @@ const ProductsContainer = () => {
     const [catalog, setCatalog] = useState([])
     const [page, setPage] = useState(1)
     const [totalElements, setTotalElements] = useState(0)
-    
-    
+    const [loading, setLoading] = useState(false)
+
     const handleSetPage = (value) => {
         setPage(Number(value))
     }
 
-    async function fetchCatalog(page) {
-        const response = await axios.get(`http://localhost:8081/api/v1/product/pagination?page=${page - 1}&size=16`)
-        setCatalog(response.data.content)
-        setTotalElements(response.data.page.totalElements)
+    const renderProducts = (page) => {
+        getCatalogProducts(page)
+            .then((res) => {
+                setCatalog(res.data.content);
+                setTotalElements(res.data.page.totalElements);
+            })
+            .catch((err) => {
+                console.log(`Ошибка при загрузке товаров. ${err}`)
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    setLoading(false);
+                }, 1500)
+            });
     }
 
     useEffect(() => {
-        fetchCatalog(page)
+        setLoading(true);
+        renderProducts(page)
     }, [page])
+    
 
     const ShowProducts = () => {
         return(
@@ -66,13 +79,18 @@ const ProductsContainer = () => {
 
     return (
         <>
-            <ShowProducts/>
-            <ProductsShown/>
-            <Pagination 
-                totalPages = {Math.ceil(totalElements / 16)}
-                onSetActiveValue = {handleSetPage}
-            />
-            
+            <Loader isLoading = {loading} /> 
+
+            {!loading && (
+                <>
+                    <ShowProducts/>
+                    <ProductsShown/>
+                    <Pagination 
+                        totalPages = {Math.ceil(totalElements / 16)}
+                        onSetActiveValue = {handleSetPage}
+                    />
+                </>
+            )}
         </>
     )
 }

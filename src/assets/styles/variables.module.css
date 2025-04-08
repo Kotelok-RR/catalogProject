@@ -9,5 +9,9 @@
     --modal-close-button-color: #31363F;
     --modal-submit-button-color: #EEEEEE;
     --modal-submit-button-focus-color: #31363F;
-    --active-button-color: rgba(238,238,238, 0.75)
+    --active-button-color: rgba(238,238,238, 0.75);
+    --loader-background-color: #EEEEEE;
+    --loader-element-primary-color: #31363F;
+    --loader-element-secondary-color: rgba(255, 255, 255, 0);
+    --loader-element-shadow-color: #5d5d5d;
 }

@@ -1,0 +1,111 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--loader-background-color);
+    z-index: 100;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.2s ease-in-out;
+}
+
+.container_is-shown {
+    top: 0;
+}
+
+.container_is-hidden {
+    top: -100%
+}
+
+.loader_element {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    transform: rotate(45deg);
+    scale: 0.7;
+}
+
+.loader_element::before {
+    content: "";
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: -24px;
+    animation: animloader 4s ease infinite;
+}
+
+.loader_element::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--loader-element-primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    animation: animloader2 2s ease infinite;
+}
+
+@keyframes animloader {
+    0% {
+        box-shadow: 0 24px var(--loader-element-secondary-color), 24px 24px var(--loader-element-secondary-color),
+        24px 48px var(--loader-element-secondary-color), 0px 48px var(--loader-element-secondary-color);
+    }
+    12% {
+        box-shadow: 0 24px var(--loader-element-shadow-color), 24px 24px var(--loader-element-secondary-color),
+        24px 48px var(--loader-element-secondary-color), 0px 48px var(--loader-element-secondary-color);
+    }
+    25% {
+        box-shadow: 0 24px var(--loader-element-shadow-color), 24px 24px var(--loader-element-shadow-color),
+        24px 48px var(--loader-element-secondary-color), 0px 48px var(--loader-element-secondary-color);
+    }
+    37% {
+        box-shadow: 0 24px var(--loader-element-shadow-color), 24px 24px var(--loader-element-shadow-color), 24px 48px var(--loader-element-shadow-color),
+        0px 48px var(--loader-element-secondary-color);
+    }
+    50% {
+        box-shadow: 0 24px var(--loader-element-shadow-color), 24px 24px var(--loader-element-shadow-color), 24px 48px var(--loader-element-shadow-color),
+        0px 48px var(--loader-element-shadow-color);
+    }
+    62% {
+        box-shadow: 0 24px var(--loader-element-secondary-color), 24px 24px var(--loader-element-shadow-color),
+        24px 48px var(--loader-element-shadow-color), 0px 48px var(--loader-element-shadow-color);
+    }
+    75% {
+        box-shadow: 0 24px var(--loader-element-secondary-color), 24px 24px var(--loader-element-secondary-color),
+        24px 48px var(--loader-element-shadow-color), 0px 48px var(--loader-element-shadow-color);
+    }
+    87% {
+        box-shadow: 0 24px var(--loader-element-secondary-color), 24px 24px var(--loader-element-secondary-color),
+        24px 48px var(--loader-element-secondary-color), 0px 48px var(--loader-element-shadow-color);
+    }
+    100% {
+        box-shadow: 0 24px var(--loader-element-secondary-color), 24px 24px var(--loader-element-secondary-color),
+        24px 48px var(--loader-element-secondary-color), 0px 48px var(--loader-element-secondary-color);
+    }
+}   
+
+@keyframes animloader2 {
+    0% {
+        transform: translate(0, 0) rotateX(0) rotateY(0);
+    }
+    25% {
+        transform: translate(100%, 0) rotateX(0) rotateY(180deg);
+    }
+    50% {
+        transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg);
+    }
+    75% {
+        transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg);
+    }
+    100% {
+        transform: translate(0, 0) rotateX(0) rotateY(360deg);
+    }
+}

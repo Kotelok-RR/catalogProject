@@ -1,18 +1,32 @@
-import axios from "axios"
 import { useState, useEffect } from "react"
+
+import { getBrandsList } from "@/utils/api"
+import Loader from "@/features/Loader/Loader"
 
 import styles from './BrandsContainer.module.css'
 
 const BrandsContainer = () => {
     const [brands, setBrands] = useState([])
+    const [loading, setLoading] = useState(false);
 
-    async function fetchBrands() {
-        const response = await axios.get(`http://localhost:8081/api/v1/brand`)
-        setBrands(response.data)
+    const renderBrands = () => {
+        getBrandsList()
+            .then((res) => {
+                setBrands(res.data);
+            })
+            .catch((err) => {
+                console.log(`Ошибка при загрузке брендов. ${err}`);
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    setLoading(false);
+                }, 1500)
+            });
     }
 
     useEffect(() => {
-        fetchBrands()
+        setLoading(true);
+        renderBrands()
     }, [])
 
     const ShowProducts = () => {
@@ -36,7 +50,13 @@ const BrandsContainer = () => {
 
     return (
         <>
-            <ShowProducts/>  
+            <Loader isLoading = {loading} />
+
+            {!loading && (
+                <>
+                    <ShowProducts/>  
+                </>
+            )}
         </>
     )
 }
