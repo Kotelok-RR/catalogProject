@@ -83,12 +83,14 @@ const ProductsContainer = () => {
 
             {!loading && (
                 <>
-                    <ShowProducts/>
-                    <ProductsShown/>
-                    <Pagination 
-                        totalPages = {Math.ceil(totalElements / 16)}
-                        onSetActiveValue = {handleSetPage}
-                    />
+                    <div>
+                        <ShowProducts/>
+                        <ProductsShown/>
+                        <Pagination 
+                            totalPages = {Math.ceil(totalElements / 16)}
+                            onSetActiveValue = {handleSetPage}
+                        />
+                    </div>
                 </>
             )}
         </>

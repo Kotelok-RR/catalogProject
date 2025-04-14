@@ -1,0 +1,11 @@
+.button {
+    block-size: 28px;
+    padding: 0 20px;
+    background-color: var(--default-global-category-button-color);
+    border-radius: 20px;
+}
+
+.button-is-active {
+    background-color: var(--active-global-category-button-color);
+    color: #EEEEEE;
+}

@@ -34,5 +34,5 @@
 }
 
 .button-routing-is-active {
-    background-color: var(--active-button-color);
+    background-color: var(--active-route-button-color);
 }

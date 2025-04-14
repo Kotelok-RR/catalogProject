@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import PageCatalog from '@pages/PageCatalog'
+import PageCatalog from "@/pages/PageCatalog/PageCatalog"
 import PageBrands from '@pages/PageBrands'
 
 const Main = () => {

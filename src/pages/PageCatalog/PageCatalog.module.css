@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: min-content 1fr;
+    padding: 32px 40px;
+    row-gap: 40px;
+}
+
+.global-categories_container {
+    grid-row: auto; 
+    grid-column: span 3;
+}
+
+.products-filter_container {
+    grid-row: 2; 
+    grid-column: 1;
+} 
+
+.products-container {
+    grid-row: 2; 
+    grid-column: 2;
+} 

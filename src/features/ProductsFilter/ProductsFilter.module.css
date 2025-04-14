@@ -1,0 +1,5 @@
+.container {
+    display: grid;
+    inline-size: max-content;
+    block-size: min-content;
+}
