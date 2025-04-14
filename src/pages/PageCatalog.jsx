@@ -1,12 +1,9 @@
-import Header from '@components/Header/Header.jsx'
-import AccountLoginModal from '@modals/AccountLoginModal/AccountLoginModal.jsx'
+import ProductsContainer from '@components/Containers/ProductContainer/ProductContainer.jsx'
 
 const PageCatalog = () => {
-    
     return (
         <>
-            <Header />
-            <AccountLoginModal />
+            <ProductsContainer />
         </>
     )
 }

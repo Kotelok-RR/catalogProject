@@ -1,11 +1,13 @@
 :root {
     --text-primary-color: #31363F;
     --text-secondary-color: #EEEEEE;
+    --text-low-accent-color: rgba(49, 54, 63, 0.75);
     --background-main-color: #fff;
     --background-accent-color: #31363F;
     --border-color: #31363F;
     --modal-overlay-color: rgba(0, 0, 0, 0.9);
-    --modal-close-button-color: #EEEEEE;
+    --modal-close-button-color: #31363F;
     --modal-submit-button-color: #EEEEEE;
+    --modal-submit-button-focus-color: #31363F;
     --active-button-color: rgba(238,238,238, 0.75)
 }

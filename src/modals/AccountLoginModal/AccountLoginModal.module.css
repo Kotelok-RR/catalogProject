@@ -10,23 +10,66 @@
     font-weight: inherit;
 }
 
+.title__container {
+    display: grid;
+    gap: 16px;
+}
+
 .welcome_message {
     font-size: 20px;
 }
 
 .no_account_container {
     font-size: 16px;
-    display: block;
+    display: grid;
+    justify-content: center;
 }
 
 .registration_span {
+    display: inline-block;
+    position: relative;
+    width: min-content;
     margin-left: 6px;
-    text-decoration: underline;
     text-underline-offset: 4px;
     cursor: pointer;
+    transition: transform 0.2s ease;
+    transform-origin: bottom left;
+    font-size: 16px;
+    color: var(--text-low-accent-color);
+}
+
+.registration_span:hover,
+.registration_span:focus {
+    color: var(--text-primary-color);
+}
+
+.registration_span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+}
+
+.registration_span:hover::after,
+.registration_span:focus::after {
+    transform: scaleX(1);
 }
 
 .modal__button-submit {
+    position: relative;
     block-size: 40px;
     background-color: var(--modal-submit-button-color);
+    transition: background-color 0.2s ease;
+}
+
+.modal__button-submit:hover,
+.modal__button-submit:focus {
+    background-color: var(--modal-submit-button-focus-color);
+    color: var(--text-secondary-color);
 }
