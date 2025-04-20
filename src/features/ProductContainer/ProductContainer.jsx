@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
 
 import { getCatalogProducts } from "@/utils/api"
+import ProductCard from "@components/ProductCard/ProductCard"
 import Pagination from "@features/Pagination/Pagination.jsx"
-import Loader from "@/features/Loader/Loader"
+import Loader from "@features/Loader/Loader.jsx"
 
 import styles from './ProductsContainer.module.css'
 
@@ -10,15 +11,17 @@ const ProductsContainer = () => {
     const [catalog, setCatalog] = useState([])
     const [page, setPage] = useState(1)
     const [totalElements, setTotalElements] = useState(0)
-    const [loading, setLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     const handleSetPage = (value) => {
         setPage(Number(value))
     }
 
     const renderProducts = (page) => {
+        setIsLoading(true)
         getCatalogProducts(page)
             .then((res) => {
+                console.log(res)
                 setCatalog(res.data.content);
                 setTotalElements(res.data.page.totalElements);
             })
@@ -27,39 +30,31 @@ const ProductsContainer = () => {
             })
             .finally(() => {
                 setTimeout(() => {
-                    setLoading(false);
+                    setIsLoading(false);
                 }, 1500)
-            });
+            })
     }
 
     useEffect(() => {
-        setLoading(true);
         renderProducts(page)
     }, [page])
     
 
-    const ShowProducts = () => {
-        return(
+    const RenderedProducts = () => {
+        return (
             <div className={styles.products_container}>
-                {catalog.map(product => {
+                {catalog.map(productData => {
                     return (
-                        <article key={product.id} className={styles.single_product_container}>
-                            <div>
-                                <img src={"src/assets/images/casperro-vista__t-shirt_zapoved.png"} className={styles.product_image}></img>
-                                <ul className={styles.product_description}>
-                                    <li className={styles.product_description_name}>{product.displayName} </li>
-                                    <li className={styles.product_description_price}>{product.price} ₽</li>
-                                    <li className={styles.product_description_brand}>{product.brand.displayName}</li>
-                                </ul>
-                            </div>
-                        </article>
+                        <ProductCard
+                            productCardData = {productData}
+                        />
                     )
                 })}
             </div>
         )
     }
 
-    const ProductsShown = () => {
+    const AmountOfShownProducts = () => {
         if (page * 16 < totalElements) {
             return (
                 <p className={styles.products_amount}>
@@ -79,13 +74,13 @@ const ProductsContainer = () => {
 
     return (
         <>
-            <Loader isLoading = {loading} /> 
+            <Loader isLoading = {isLoading} />
 
-            {!loading && (
+            {!isLoading && (
                 <>
                     <div>
-                        <ShowProducts/>
-                        <ProductsShown/>
+                        <RenderedProducts/>
+                        <AmountOfShownProducts/>
                         <Pagination 
                             totalPages = {Math.ceil(totalElements / 16)}
                             onSetActiveValue = {handleSetPage}

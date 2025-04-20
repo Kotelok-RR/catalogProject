@@ -1,6 +1,6 @@
 import GlobalCategories from '@/features/GlobalCategories/GlobalCategories';
 import ProductsFilter from '@/features/ProductsFilter/ProductsFilter';
-import ProductsContainer from '@components/Containers/ProductContainer/ProductContainer.jsx'
+import ProductsContainer from '@features/ProductContainer/ProductContainer.jsx';
 
 import styles from './PageCatalog.module.css'
 

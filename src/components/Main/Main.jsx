@@ -8,7 +8,7 @@ const Main = () => {
         <>
             <main>
                 <Routes>
-                    <Route path="/" element={<Navigate to="/catalog" replace />} />
+                    <Route path = {'/'} element = {<Navigate to = '/catalog' replace />} />
                     <Route path = {'/catalog'} element = {<PageCatalog />}/>
                     <Route path = {'/Brands'} element = {<PageBrands />}/>
                 </Routes>

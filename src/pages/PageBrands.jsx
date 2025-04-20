@@ -1,4 +1,4 @@
-import BrandsContainer from '@components/Containers/BrandsContainer/BrandsContainer.jsx'
+import BrandsContainer from '@features/BrandsContainer/BrandsContainer.jsx'
 
 const PageBrands = () => {
     return (

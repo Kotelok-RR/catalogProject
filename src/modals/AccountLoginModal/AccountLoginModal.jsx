@@ -1,4 +1,6 @@
 import classNames from 'classnames';
+import { FocusTrap } from 'focus-trap-react'
+import { useEffect } from 'react';
 
 import Button from '@components/Button/Button.jsx';
 
@@ -10,9 +12,26 @@ import inputDefaultStyles from '@defaultStyles/defaultInput.module.css';
 
 
 const AccountLoginModal = ({accountModalActive, setAccountModalActive}) => {
+    
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === 'Escape') {
+            setAccountModalActive(false);
+          }
+        };
+    
+        if (accountModalActive) {
+          document.addEventListener('keydown', handleKeyDown);
+        }
+    
+        return () => {
+          document.removeEventListener('keydown', handleKeyDown);
+        };
+      }, [accountModalActive, setAccountModalActive]);
+
     return (
         
-        <>
+        <FocusTrap active={accountModalActive}>
             <div className = {GetModalClassName(accountModalActive)} onClick = {() => setAccountModalActive(false)}>
                 <div className = {classNames(modalDefaultStyles.modal__frame, styles.modal_type_account_authorization__frame)} onClick = {e => e.stopPropagation()}>
                 <Button
@@ -57,7 +76,7 @@ const AccountLoginModal = ({accountModalActive, setAccountModalActive}) => {
                         </h3>
                 </div>
             </div>
-        </>
+        </FocusTrap>
     )
 }
 

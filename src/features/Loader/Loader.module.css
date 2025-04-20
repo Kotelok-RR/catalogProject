@@ -13,11 +13,11 @@
 }
 
 .container_is-shown {
-    top: 0;
+    visibility: show;
 }
 
 .container_is-hidden {
-    top: -100%
+    visibility: hidden;
 }
 
 .loader_element {

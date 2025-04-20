@@ -1,0 +1,13 @@
+.products_container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 36px;
+}
+
+.products_amount {
+    display: block;
+    justify-self: center;
+    margin: 48px 0;
+    letter-spacing: 15%;
+}
