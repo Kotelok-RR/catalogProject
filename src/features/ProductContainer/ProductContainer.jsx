@@ -75,19 +75,14 @@ const ProductsContainer = () => {
     return (
         <>
             <Loader isLoading = {isLoading} />
-
-            {!isLoading && (
-                <>
-                    <div>
-                        <RenderedProducts/>
-                        <AmountOfShownProducts/>
-                        <Pagination 
-                            totalPages = {Math.ceil(totalElements / 16)}
-                            onSetActiveValue = {handleSetPage}
-                        />
-                    </div>
-                </>
-            )}
+            <div>
+                <RenderedProducts/>
+                <AmountOfShownProducts/>
+                <Pagination 
+                    totalPages = {Math.ceil(totalElements / 16)}
+                    onSetActiveValue = {handleSetPage}
+                />
+            </div>
         </>
     )
 }
